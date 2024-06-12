@@ -13,10 +13,10 @@ function Container() {
           <NavbarComponent />
           <Routes>
             <Route path="/movieDetail/:id" element={<MovieDetail />}></Route>
-            <Route path="/trendMovies" element={<HomePage />}></Route>
             <Route path="/genres" element={<HomePage />}></Route>
             <Route path="/tvSeries" element={<HomePage />}></Route>
             <Route path="/" element={<HomePage />}></Route>
+            <Route path="/:trending" element={<HomePage />}></Route>
           </Routes>
         </Router>
       </div>
