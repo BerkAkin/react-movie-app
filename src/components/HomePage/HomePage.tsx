@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-
 import styles from "./styles.module.css";
 import Card from "../Card/Card";
 
@@ -27,16 +26,33 @@ function HomePage() {
     },
   };
 
+  const { trending } = useParams();
+
   const [movies, setMovies] = useState<AllMoviesResponse[]>([]);
 
   useEffect(() => {
-    axios("https://api.themoviedb.org/3/movie/upcoming?language=tr-TR&page=1", options)
-      .then((response) => {
-        setMovies(response.data.results);
-        console.log(response);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+    const fetchMovies = async () => {
+      try {
+        let url;
+        if (trending === "trending") {
+          url = `https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1`;
+        } else if (trending === "series") {
+          url = `https://api.themoviedb.org/3/tv/popular?language=tr-TR&page=1`;
+        } else {
+          url = `https://api.themoviedb.org/3/movie/upcoming?language=tr-TR&page=1`;
+        }
+
+        await axios(url, options)
+          .then((response) => {
+            setMovies(response.data.results);
+          })
+          .catch((err) => console.error(err));
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
+    };
+    fetchMovies();
+  }, [trending]);
 
   return (
     <>
