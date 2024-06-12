@@ -26,7 +26,7 @@ function MovieDetail() {
 
   return (
     <>
-      <div> {JSON.stringify(movieDetail)} </div>
+      <div className="pt-5"> {JSON.stringify(movieDetail)} </div>
     </>
   );
 }
