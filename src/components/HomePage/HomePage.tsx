@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import MovieDetail from "../MovieDetail/MovieDetail";
+
+import styles from "./styles.module.css";
+import Card from "../Card/Card";
+
 const api = process.env.REACT_APP_API_KEY;
 
 interface AllMoviesResponse {
@@ -37,15 +40,20 @@ function HomePage() {
 
   return (
     <>
-      <div>
-        {movies.map((mov, key) => {
-          return (
-            <>
-              <div key={key}></div>
-              <Link to={`/movieDetail/${mov.id}`}>{mov.title}</Link>
-            </>
-          );
-        })}
+      <div className={"container pt-5"}>
+        <div className="row pt-5">
+          {movies.map((mov) => {
+            return (
+              <>
+                <div className="col-2 mt-5">
+                  <div key={mov.id}></div>
+
+                  <Card movie={mov} />
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </>
   );
