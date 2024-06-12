@@ -28,7 +28,7 @@ function NavbarComponent() {
                   </Link>
                 </li>
                 <li className=" nav-item ">
-                  <Link className="nav-link ms-4 mt-2" to={`/trendMovies`}>
+                  <Link className="nav-link ms-4 mt-2" to={`/trending`}>
                     TREND FİLMLER
                   </Link>
                 </li>
@@ -38,7 +38,7 @@ function NavbarComponent() {
                   </Link>
                 </li>
                 <li className=" nav-item ">
-                  <Link className="nav-link ms-4 mt-2" to={`/tvSeries`}>
+                  <Link className="nav-link ms-4 mt-2" to={`/series`}>
                     DİZİLER
                   </Link>
                 </li>
