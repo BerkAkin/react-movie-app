@@ -9,10 +9,13 @@ function Container() {
   return (
     <>
       <div className={styles.bgImage}>
-        <NavbarComponent />
         <Router>
+          <NavbarComponent />
           <Routes>
             <Route path="/movieDetail/:id" element={<MovieDetail />}></Route>
+            <Route path="/trendMovies" element={<HomePage />}></Route>
+            <Route path="/genres" element={<HomePage />}></Route>
+            <Route path="/tvSeries" element={<HomePage />}></Route>
             <Route path="/" element={<HomePage />}></Route>
           </Routes>
         </Router>
