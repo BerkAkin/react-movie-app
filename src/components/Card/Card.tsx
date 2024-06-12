@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 interface Props {
   movie: {
     id: number;
-    title: string;
     overview: string;
     poster_path: string;
+    name?: string;
+    title?: string;
   };
 }
 
@@ -23,7 +24,7 @@ function Card(props: Props) {
         </div>
         <div className={`${styles.cardTitlePanel} text-center pt-2 `}>
           <Link className="text-decoration-none text-dark fw-bold" to={`/movieDetail/${movie.id}`}>
-            {movie.title}
+            {movie.name ? movie.name : movie.title}
           </Link>
         </div>
       </div>
