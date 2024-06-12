@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 function NavbarComponent() {
   return (
@@ -22,24 +23,24 @@ function NavbarComponent() {
             <div className=" collapse  navbar-collapse" id="navbarSupportedContent">
               <ul className=" navbar-nav  me-auto mb-2 mb-lg-0">
                 <li className=" nav-item ">
-                  <a className="nav-link ms-4 mt-2" aria-current="page" href="#">
+                  <Link className="nav-link ms-4 mt-2" to={`/`}>
                     YENİ FİLMLER
-                  </a>
+                  </Link>
                 </li>
                 <li className=" nav-item ">
-                  <a className="nav-link ms-4 mt-2" aria-current="page" href="#">
+                  <Link className="nav-link ms-4 mt-2" to={`/trendMovies`}>
                     TREND FİLMLER
-                  </a>
+                  </Link>
                 </li>
                 <li className=" nav-item ">
-                  <a className="nav-link ms-4 mt-2" aria-current="page" href="#">
+                  <Link className="nav-link ms-4 mt-2" to={`/genres`}>
                     TÜRLER
-                  </a>
+                  </Link>
                 </li>
                 <li className=" nav-item ">
-                  <a className="nav-link ms-4 mt-2" aria-current="page" href="#">
+                  <Link className="nav-link ms-4 mt-2" to={`/tvSeries`}>
                     DİZİLER
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="d-flex justify-content-center align-items-center">
