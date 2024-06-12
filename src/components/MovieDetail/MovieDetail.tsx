@@ -20,8 +20,9 @@ function MovieDetail() {
     poster_path: string;
     title: string;
     overview: string;
+    release_date: string;
     genres: { id: number; name: string }[];
-  }>({ backdrop_path: "", poster_path: "", title: "", overview: "", genres: [] });
+  }>({ backdrop_path: "", poster_path: "", title: "", overview: "", genres: [], release_date: "" });
   const posterUrl = `https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path}`;
   const backdropUrl = `https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`;
 
@@ -46,7 +47,7 @@ function MovieDetail() {
                 </div>
               </div>
               <div className="col-8">
-                <div style={{ fontSize: "6rem" }} className="d-flex text-white fw-bold mt-3">
+                <div style={{ fontSize: "5.1rem" }} className="d-flex text-white fw-bold mt-1">
                   {movieDetail.title}
                 </div>
                 <div className="mt-4">
@@ -55,10 +56,12 @@ function MovieDetail() {
                       {genre.name}
                     </span>
                   ))}
-                </div>
-
-                <div style={{ fontSize: "1.5rem" }} className="d-flex text-white  mt-5">
+                </div>{" "}
+                <div style={{ fontSize: "1.3rem" }} className="d-flex text-white  mt-5">
                   {movieDetail.overview}
+                </div>
+                <div className="d-flex text-white  mt-5">
+                  Çıkış Tarihi: <span className="ms-1"> {movieDetail.release_date}</span>
                 </div>
               </div>
             </div>
