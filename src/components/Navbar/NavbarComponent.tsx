@@ -6,8 +6,8 @@ function NavbarComponent() {
       <div>
         <nav className={`fixed-top navbar navbar-expand-lg navbar-dark ${styles.bgBlur}`}>
           <div className="container-fluid ">
-            <a className="navbar-brand fs-1 ms-2" href="#" style={{ letterSpacing: "0.5rem" }}>
-              MovieManiac
+            <a className="navbar-brand fs-1 ms-2 display-6" href="#" style={{ letterSpacing: "0.5rem" }}>
+              CineMoves
             </a>
             <button
               className="navbar-toggler"
