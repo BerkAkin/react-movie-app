@@ -15,7 +15,7 @@ function MovieDetail() {
   };
 
   const { id, seriesDetail } = useParams();
-  console.log(seriesDetail);
+
   const [movieDetail, setMovieDetail] = useState<{
     backdrop_path: string;
     poster_path: string;
@@ -47,6 +47,7 @@ function MovieDetail() {
     tagline: "",
     status: "",
   });
+
   const posterUrl = `https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path}`;
   const backdropUrl = `https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`;
 
@@ -68,7 +69,7 @@ function MovieDetail() {
   return (
     <>
       <div className={`vh-100 `} style={{ backgroundImage: `url(${posterUrl})`, backgroundSize: 2000 }}>
-        <div className={`vh-100 pt-5 d-flex justify-content-center align-items-center ${styles.bgImage}`}>
+        <div className={`vh-100 d-flex justify-content-center align-items-center ${styles.bgImage}`}>
           <div className="container " style={{ height: 600 }}>
             <div className="row" style={{ height: 600 }}>
               <div className="col-4">
