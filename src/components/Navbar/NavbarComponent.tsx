@@ -45,10 +45,14 @@ function NavbarComponent() {
               </ul>
               <div className="d-flex justify-content-center align-items-center">
                 <a className="w-100 btn btn-lg fs-5 text-nowrap text-light" style={{ height: "90px", borderRadius: 0, paddingTop: "30px" }}>
-                  OTURUM AÇ
+                  <Link className="nav-link ms-4 mt-2" to={`/login`}>
+                    OTURUM AÇ
+                  </Link>
                 </a>
                 <a className="w-100 btn btn-lg fs-5 text-light" style={{ height: "90px", borderRadius: 0, paddingTop: "30px" }}>
-                  ÜYE OL
+                  <Link className="nav-link ms-4 mt-2" to={`/`}>
+                    ÜYE OL
+                  </Link>
                 </a>
               </div>
             </div>
