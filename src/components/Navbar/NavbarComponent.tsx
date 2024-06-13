@@ -23,12 +23,12 @@ function NavbarComponent() {
             <div className=" collapse  navbar-collapse" id="navbarSupportedContent">
               <ul className=" navbar-nav  me-auto mb-2 mb-lg-0">
                 <li className=" nav-item ">
-                  <Link className="nav-link ms-4 mt-2" to={`/`}>
+                  <Link className="nav-link ms-4 mt-2" to={`/news`}>
                     YENİ FİLMLER
                   </Link>
                 </li>
                 <li className=" nav-item ">
-                  <Link className="nav-link ms-4 mt-2" to={`/trending`}>
+                  <Link className="nav-link ms-4 mt-2" to={`/trends`}>
                     TREND FİLMLER
                   </Link>
                 </li>
