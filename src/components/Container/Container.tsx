@@ -4,6 +4,7 @@ import MovieDetail from "../MovieDetail/MovieDetail";
 import HomePage from "../HomePage/HomePage";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import styles from "./styles.module.css";
+import Login from "../Auth/Login/Login";
 
 function Container() {
   return (
@@ -17,7 +18,8 @@ function Container() {
             <Route path="/:trendsDetail/:id" element={<MovieDetail />}></Route>
             <Route path="/genres" element={<HomePage />}></Route>
             <Route path="/tvSeries" element={<HomePage />}></Route>
-            <Route path="/newsa" element={<HomePage />}></Route>
+            <Route path="/news" element={<HomePage />}></Route>
+            <Route path="/login" element={<Login />}></Route>
             <Route path="/" element={<HomePage />}>
               <Route path="/:category" element={<HomePage />}></Route>
             </Route>
