@@ -12,11 +12,15 @@ function Container() {
         <Router>
           <NavbarComponent />
           <Routes>
-            <Route path="/movieDetail/:id" element={<MovieDetail />}></Route>
+            <Route path="/:seriesDetail/:id" element={<MovieDetail />}></Route>
+            <Route path="/:newsDetail/:id" element={<MovieDetail />}></Route>
+            <Route path="/:trendsDetail/:id" element={<MovieDetail />}></Route>
             <Route path="/genres" element={<HomePage />}></Route>
             <Route path="/tvSeries" element={<HomePage />}></Route>
-            <Route path="/" element={<HomePage />}></Route>
-            <Route path="/:trending" element={<HomePage />}></Route>
+            <Route path="/newsa" element={<HomePage />}></Route>
+            <Route path="/" element={<HomePage />}>
+              <Route path="/:category" element={<HomePage />}></Route>
+            </Route>
           </Routes>
         </Router>
       </div>
