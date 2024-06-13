@@ -1,3 +1,4 @@
 .bgImage {
-  background-color: rgb(32, 32, 32);
+  background: url("../../../public/darkmenu.png");
+  background-size: cover;
 }
