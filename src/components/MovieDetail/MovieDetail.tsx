@@ -28,18 +28,24 @@ function MovieDetail() {
     number_of_seasons: string;
     first_air_date: string;
     created_by?: [{ name: string }];
+    production_companies: { name: string }[];
+    tagline: string;
+    status: string;
   }>({
     backdrop_path: "",
     poster_path: "",
     title: "",
     overview: "",
     genres: [],
+    production_companies: [],
     release_date: "",
     name: "",
     number_of_seasons: "",
     episode_run_time: "",
     first_air_date: "",
     created_by: [{ name: "" }],
+    tagline: "",
+    status: "",
   });
   const posterUrl = `https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path}`;
   const backdropUrl = `https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`;
@@ -67,37 +73,51 @@ function MovieDetail() {
             <div className="row" style={{ height: 600 }}>
               <div className="col-4">
                 <div className={`${styles.cardBody} d-flex justify-content-end `}>
-                  <img style={{ borderRadius: "20px" }} src={`${backdropUrl}`} width={450} />
+                  <img style={{ borderRadius: "20px" }} src={`${backdropUrl}`} width={480} />
                 </div>
               </div>
               <div className="col-8">
-                <div style={{ fontSize: "5.1rem" }} className="d-flex text-white fw-bold mt-1">
+                <div style={{ fontSize: "4.5rem" }} className="d-flex text-white fw-bold">
                   {seriesDetail === "seriesDetail" ? `${movieDetail.name}` : `${movieDetail.title}`}
+                  <small className="fs-5">
+                    {seriesDetail === "seriesDetail" ? ` ${movieDetail.number_of_seasons} Sezon` : `  ${movieDetail.release_date.substring(0, 4)}`}
+                  </small>
+                </div>
+                <div className="d-flex text-white fw-bold ms-2">
+                  <small className="fs-5">{movieDetail.tagline}</small>
                 </div>
                 <div className="mt-4">
                   {movieDetail.genres.map((genre) => (
-                    <span key={genre.id} className={`border rounded text-white px-2 py-1 mr-2 mx-1 ${styles.genre}`}>
+                    <span key={genre.id} className={`border rounded-pill text-white px-2 py-1 mr-2 mx-1 ${styles.genre}`}>
                       {genre.name}
                     </span>
                   ))}
                 </div>
-                <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-3">
-                  {movieDetail.overview}
+                <div className="mt-3">
+                  <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-1">
+                    <p className="p-1">Stüdyolar:</p>
+                    {movieDetail.production_companies.map((pcom) => (
+                      <p key={pcom.name} className={`border p-1 rounded text-center text-white mx-1`}>{`${pcom.name}`}</p>
+                    ))}
+                  </div>
                 </div>{" "}
                 <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-4">
+                  {movieDetail.overview}
+                </div>
+                <div style={{ fontSize: "1.05rem" }} className="d-flex text-white mt-4">
                   {seriesDetail === "seriesDetail" &&
                     movieDetail.created_by &&
                     movieDetail.created_by.length > 0 &&
                     `Yapımcı: ${movieDetail.created_by[0].name}`}
                 </div>{" "}
                 <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-1">
-                  {seriesDetail === "seriesDetail" ? `İlk Yayın Tarihi: ${movieDetail.first_air_date}` : ""}
-                </div>{" "}
-                <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-1">
-                  {seriesDetail === "seriesDetail" ? `Sezon Sayısı: ${movieDetail.number_of_seasons}` : `Çıkış Tarihi:  ${movieDetail.release_date}`}
+                  {seriesDetail === "seriesDetail" ? `İlk Yayın Tarihi: ${movieDetail.first_air_date.substring(0, 4)}` : ""}
                 </div>{" "}
                 <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-1">
                   {seriesDetail === "seriesDetail" ? `Bölüm Uzunluğu: ${movieDetail.episode_run_time} Dk` : ""}
+                </div>
+                <div style={{ fontSize: "1.05rem" }} className="d-flex text-white  mt-1">
+                  Durum : {movieDetail.status}
                 </div>
               </div>
             </div>
