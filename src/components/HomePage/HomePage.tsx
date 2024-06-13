@@ -26,7 +26,7 @@ function HomePage() {
     },
   };
 
-  const { trending } = useParams();
+  const { category } = useParams();
 
   const [movies, setMovies] = useState<AllMoviesResponse[]>([]);
 
@@ -34,9 +34,9 @@ function HomePage() {
     const fetchMovies = async () => {
       try {
         let url;
-        if (trending === "trending") {
+        if (category === "trends") {
           url = `https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1`;
-        } else if (trending === "series") {
+        } else if (category === "series") {
           url = `https://api.themoviedb.org/3/tv/popular?language=tr-TR&page=1`;
         } else {
           url = `https://api.themoviedb.org/3/movie/upcoming?language=tr-TR&page=1`;
@@ -52,7 +52,7 @@ function HomePage() {
       }
     };
     fetchMovies();
-  }, [trending]);
+  }, [category]);
 
   return (
     <>
@@ -64,7 +64,7 @@ function HomePage() {
                 <div className="col-2 mt-5">
                   <div key={mov.id}></div>
 
-                  <Card movie={mov} />
+                  <Card movie={mov} category={category} />
                 </div>
               </>
             );
