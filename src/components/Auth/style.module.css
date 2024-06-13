@@ -1,31 +1,38 @@
 .registerBody {
-  height: 500px;
-  border-radius: 10px;
   background-size: 400px;
-  border: 1px solid rgba(95, 95, 95, 0.349);
-  backdrop-filter: blur(10px);
-  background-color: rgba(223, 223, 223, 0.178);
+  border: 1px solid rgba(95, 95, 95, 0.219);
+  backdrop-filter: blur(15px);
+  background-color: rgba(223, 223, 223, 0.075);
 }
 .button {
   border-radius: 0 !important;
-  width: 50%;
-  height: 40%;
+  width: 70% !important;
+  height: 50% !important;
   font-size: 1.4rem;
   outline: none;
   border: none;
-  color: rgb(107, 107, 107) k;
-  background-color: rgba(223, 223, 223, 0.719);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
 }
 
 .input {
-  width: 70%;
-  height: 15%;
-  font-size: 1.4rem;
+  width: 70% !important;
+  height: 15% !important;
+  font-size: 1.2rem;
   outline: none;
   border: none;
+  background: transparent;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  padding-left: 0;
+  color: white;
+}
+
+.input::placeholder {
+  color: white;
 }
 
 .input:focus {
   outline: none;
-  border: none;
 }

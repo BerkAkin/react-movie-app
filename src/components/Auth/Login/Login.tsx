@@ -9,22 +9,29 @@ function Login() {
   return (
     <>
       <div className="vh-100 d-flex justify-content-center align-items-center">
-        <div className={`container ${styles.registerBody}`}>
-          <div className="row" style={{ height: "100%" }}>
-            <div className="col-6">
-              <div className="row h-100 text-center d-flex text-light align-items-center">
-                <p style={{ fontSize: "7rem" }} className="display-1">
-                  CINEMOVES
+        <div className={`container h-50`}>
+          <div className={`row w-50 h-100 mx-auto ${styles.registerBody}`}>
+            <div className="col-12">
+              <div className="row text-center d-flex text-light align-items-center h-25">
+                <p style={{ fontSize: "4.5rem" }} className="pt-4 fw-bolder">
+                  GİRİŞ YAP
                 </p>
               </div>
-            </div>
-            <div className={`col-6 d-flex flex-column`} style={{ color: "#b5b5b5" }}>
-              <div className="row d-flex justify-content-center flex-column align-items-center my-auto  h-75 ">
-                <input placeholder="Kullanıcı Adı" className={`mt-5 text-center ${styles.input}`}></input>
-                <input placeholder="Şifre" type="password" className={`mt-5 text-center ${styles.input}`}></input>
+              <div className=" row h-50 d-flex flex-column justify-content-evenly align-items-center">
+                <input placeholder="E-Mail" className={`mt-2 ${styles.input}`}></input>
+                <input placeholder="Şifre" type="password" className={`${styles.input}`}></input>
               </div>
-              <div className="row d-flex justify-content-center flex-column align-items-center h-25">
-                <button className={` ${styles.button}`}>Giriş Yap</button>
+
+              <div className="row h-25 ">
+                <div className="col-7  h-100 d-flex justify-content-end align-items-center">
+                  <button className={` ${styles.button}`}>Giriş Yap</button>
+                </div>
+                <div className="col-4  h-100 d-flex justify-content-start align-items-center">
+                  <a href="#" className="text-white">
+                    {" "}
+                    Şifremi Unuttum
+                  </a>
+                </div>
               </div>
             </div>
           </div>
