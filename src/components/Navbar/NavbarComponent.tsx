@@ -50,7 +50,7 @@ function NavbarComponent() {
                   </Link>
                 </a>
                 <a className="w-100 btn btn-lg fs-5 text-light" style={{ height: "90px", borderRadius: 0, paddingTop: "30px" }}>
-                  <Link className="nav-link ms-4 mt-2" to={`/`}>
+                  <Link className="nav-link ms-4 mt-2" to={`/register`}>
                     ÜYE OL
                   </Link>
                 </a>
