@@ -44,16 +44,21 @@ function NavbarComponent() {
                 </li>
               </ul>
               <div className="d-flex justify-content-center align-items-center">
-                <a className="w-100 btn btn-lg fs-5 text-nowrap text-light" style={{ height: "90px", borderRadius: 0, paddingTop: "30px" }}>
-                  <Link className="nav-link ms-4 mt-2" to={`/login`}>
-                    OTURUM AÇ
-                  </Link>
-                </a>
-                <a className="w-100 btn btn-lg fs-5 text-light" style={{ height: "90px", borderRadius: 0, paddingTop: "30px" }}>
-                  <Link className="nav-link ms-4 mt-2" to={`/register`}>
-                    ÜYE OL
-                  </Link>
-                </a>
+                <Link
+                  style={{ height: "90px", width: "150px" }}
+                  className="nav-link me-4 text-center  pt-4 text-nowrap fs-5 text-light"
+                  to={`/login`}
+                >
+                  OTURUM AÇ
+                </Link>
+
+                <Link
+                  style={{ height: "90px", width: "100px" }}
+                  className="nav-link me-4 pt-4  text-center text-nowrap fs-5 text-light"
+                  to={`/register`}
+                >
+                  ÜYE OL
+                </Link>
               </div>
             </div>
           </div>
