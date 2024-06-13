@@ -5,6 +5,7 @@ import HomePage from "../HomePage/HomePage";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import styles from "./styles.module.css";
 import Login from "../Auth/Login/Login";
+import Register from "../Auth/Register/Register";
 
 function Container() {
   return (
@@ -20,6 +21,7 @@ function Container() {
             <Route path="/tvSeries" element={<HomePage />}></Route>
             <Route path="/news" element={<HomePage />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />}></Route>
             <Route path="/" element={<HomePage />}>
               <Route path="/:category" element={<HomePage />}></Route>
             </Route>
