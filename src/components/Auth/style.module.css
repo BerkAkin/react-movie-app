@@ -1,0 +1,31 @@
+.registerBody {
+  height: 500px;
+  border-radius: 10px;
+  background-size: 400px;
+  border: 1px solid rgba(95, 95, 95, 0.349);
+  backdrop-filter: blur(10px);
+  background-color: rgba(223, 223, 223, 0.178);
+}
+.button {
+  border-radius: 0 !important;
+  width: 50%;
+  height: 40%;
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  color: rgb(107, 107, 107) k;
+  background-color: rgba(223, 223, 223, 0.719);
+}
+
+.input {
+  width: 70%;
+  height: 15%;
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+  border: none;
+}
